@@ -78,8 +78,8 @@ X = cat(ones(n), cluster_center(P,k)[1] .+ R .* cos.(T),cluster_center(P,k)[2] +
 Y = A[P]
 
 # train neural network
-@time Ws1, loss1, margins1, betas1 = twonet(X, Y, m, stepsize, niter; both=true)
-@time Ws2, loss2, margins2, betas2 = twonet(X, Y, m, stepsize, niter; both=false)
+Ws1, loss1, margins1, betas1 = twonet(X, Y, m, stepsize, niter; both=true)
+Ws2, loss2, margins2, betas2 = twonet(X, Y, m, stepsize, niter; both=false)
     
 # plots
 X1 = X[(Y .== 1),:]
